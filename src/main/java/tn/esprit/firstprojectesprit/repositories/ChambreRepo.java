@@ -2,7 +2,8 @@ package tn.esprit.firstprojectesprit.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import tn.esprit.firstprojectesprit.Entity.Bloc;
+import tn.esprit.firstprojectesprit.Entity.Chambre;
+
 @Repository
-public interface BlocRepo extends JpaRepository <Bloc,Long> {
+public interface ChambreRepo  extends JpaRepository<Chambre,Long> {
 }
