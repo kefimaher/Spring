@@ -11,12 +11,12 @@ import java.util.Set;
 @NoArgsConstructor
 public class Reservation {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     String idreservation ;
     String anneeuniversitaire ;
     boolean estvalide ;
-
-
-    @OneToMany (mappedBy = "chambre")
-    private Set<Chambre> chambres;
-
+    @ManyToOne
+    @JoinColumn(name = "idchambre")
+    private Chambre chambre;
 }

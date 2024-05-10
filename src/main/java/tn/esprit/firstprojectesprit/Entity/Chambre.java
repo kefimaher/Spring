@@ -18,7 +18,7 @@ public class Chambre {
     TypeChambre typec ;
     @OneToMany
     private Set<Bloc> blocs;
-    @OneToMany (mappedBy = "reservations")
+    @OneToMany(mappedBy = "chambre")
     private Set<Reservation> reservations;
 
 }
