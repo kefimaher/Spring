@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.firstprojectesprit.Entity.Foyer;
 import tn.esprit.firstprojectesprit.repositories.FoyerRepo;
+
+import java.util.Optional;
+
 @AllArgsConstructor
 @Service
 public class FoyerServiceImpl implements  IFoyerService{
@@ -21,4 +24,11 @@ public class FoyerServiceImpl implements  IFoyerService{
     public Foyer modifierFoyer(Foyer foyer) {
         return foyerRepo.save(foyer);
     }
+
+    @Override
+    public Foyer chercherFoyer(Foyer foyer) {
+        return foyerRepo.findById(foyer.getIdfoyer()).orElse(null);
+
+    }
+
 }
