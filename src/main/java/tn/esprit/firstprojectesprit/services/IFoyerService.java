@@ -1,5 +1,9 @@
 package tn.esprit.firstprojectesprit.services;
 
-public interface IFoyerService {
+import tn.esprit.firstprojectesprit.Entity.Foyer;
 
-}
+public interface IFoyerService {
+    Foyer ajouterFoyer(Foyer foyer);
+    Foyer supprimeFoyer(Foyer foyer);
+    Foyer modifierFoyer(Foyer foyer);
+  }
