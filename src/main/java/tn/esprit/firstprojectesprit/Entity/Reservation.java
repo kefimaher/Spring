@@ -2,6 +2,7 @@ package tn.esprit.firstprojectesprit.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -19,4 +20,6 @@ public class Reservation {
     @ManyToOne
     @JoinColumn(name = "idchambre")
     private Chambre chambre;
+    @ManyToMany(mappedBy = "reservations")
+    private Set<Etudiant> etudiants = new HashSet<>();
 }

@@ -20,7 +20,7 @@ public class Bloc {
     @ManyToOne
     Foyer foyer ;
 
-    @OneToMany
+    @OneToMany(mappedBy = "blocs")
     private Set<Chambre> chambres;
 
 }

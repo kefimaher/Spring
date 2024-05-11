@@ -7,4 +7,5 @@ public interface IFoyerService {
     Foyer supprimeFoyer(Foyer foyer);
     Foyer modifierFoyer(Foyer foyer);
     Foyer chercherFoyer(Foyer foyer);
+
   }

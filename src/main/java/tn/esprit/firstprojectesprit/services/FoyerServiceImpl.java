@@ -30,5 +30,4 @@ public class FoyerServiceImpl implements  IFoyerService{
         return foyerRepo.findById(foyer.getIdfoyer()).orElse(null);
 
     }
-
 }
