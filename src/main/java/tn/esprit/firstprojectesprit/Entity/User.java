@@ -1,10 +1,7 @@
 package tn.esprit.firstprojectesprit.Entity;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
-
-
 @Entity
 @Getter
 @Setter
