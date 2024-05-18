@@ -1,9 +1,7 @@
 package tn.esprit.firstprojectesprit.restController;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tn.esprit.firstprojectesprit.Entity.Foyer;
 import tn.esprit.firstprojectesprit.services.IFoyerService;
 
@@ -18,18 +16,19 @@ public class FoyerRestController {
         return foyerService.ajouterFoyer(foyer) ;
     }
 
-
-    public Foyer supprimeFoyer(Foyer foyer) {
+   @DeleteMapping (path = "/foyer")
+    public Foyer supprimeFoyer(@RequestBody Foyer foyer) {
        return foyerService.supprimeFoyer(foyer);
 
     }
 
+    @GetMapping(path = "/foyer")
     public Foyer modifierFoyer(Foyer foyer) {
 
         return foyerService.modifierFoyer(foyer);
     }
-
-    public Foyer chercherFoyer(long id) {
+    @GetMapping(path = "/foyer/{id-foyer}")
+    public Foyer chercherFoyer(@PathVariable("id-foyer") long id) {
         return foyerService.chercherFoyer(id) ;
     }
 
