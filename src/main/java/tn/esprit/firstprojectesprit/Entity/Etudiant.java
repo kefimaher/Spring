@@ -20,6 +20,5 @@ public class Etudiant {
     String ecole  ;
     Date datenaissanse ;
     @ManyToMany
-
     private Set<Reservation> reservations = new HashSet<>();
 }

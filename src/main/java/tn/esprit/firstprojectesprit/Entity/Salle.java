@@ -1,13 +1,13 @@
 package tn.esprit.firstprojectesprit.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -21,4 +21,14 @@ public class Salle {
     Long idsalle ;
     String  nom ;
     int capacitesalle ;
+
+    @ManyToOne
+    Cinema cinema ;
+
+
+
+    @ManyToMany
+    private Set<Film> films = new HashSet<>();
+
+
 }

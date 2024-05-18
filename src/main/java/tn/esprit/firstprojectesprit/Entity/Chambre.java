@@ -16,14 +16,8 @@ public class Chambre {
     Long numerochambre ;
     @Enumerated (EnumType.STRING)
     TypeChambre typec ;
-
-
     @ManyToOne
     private Bloc blocs;
-
-
-
-
     @OneToMany(mappedBy = "chambre")
     private Set<Reservation> reservations;
 

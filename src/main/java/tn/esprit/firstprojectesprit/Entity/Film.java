@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -19,4 +21,10 @@ public class Film {
     Date dateproduction ;
     @Enumerated(EnumType.STRING)
     Typefilm typefilm ;
+
+
+    /*
+    @ManyToMany
+    private Set<Salle> salles = new HashSet<>();
+      */
 }
