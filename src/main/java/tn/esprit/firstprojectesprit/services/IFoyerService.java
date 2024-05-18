@@ -6,6 +6,6 @@ public interface IFoyerService {
     Foyer ajouterFoyer(Foyer foyer);
     Foyer supprimeFoyer(Foyer foyer);
     Foyer modifierFoyer(Foyer foyer);
-    Foyer chercherFoyer(Foyer foyer);
+    Foyer chercherFoyer(long id);
 
   }
