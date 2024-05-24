@@ -1,5 +1,6 @@
 package tn.esprit.firstprojectesprit.services;
 
+import tn.esprit.firstprojectesprit.Entity.Bloc;
 import tn.esprit.firstprojectesprit.Entity.Foyer;
 
 public interface IFoyerService {
@@ -7,5 +8,5 @@ public interface IFoyerService {
     Foyer supprimeFoyer(Foyer foyer);
     Foyer modifierFoyer(Foyer foyer);
     Foyer chercherFoyer(long id);
-
+     Foyer affecteroyerABloc (String nomfoyer , Bloc bloc) ;
   }

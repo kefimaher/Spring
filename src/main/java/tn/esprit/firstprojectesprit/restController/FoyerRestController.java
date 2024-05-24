@@ -2,11 +2,13 @@ package tn.esprit.firstprojectesprit.restController;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.firstprojectesprit.Entity.Bloc;
 import tn.esprit.firstprojectesprit.Entity.Foyer;
 import tn.esprit.firstprojectesprit.services.IFoyerService;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/foyer-rest-controller")
 public class FoyerRestController {
     IFoyerService foyerService ;
 
@@ -15,15 +17,12 @@ public class FoyerRestController {
     {
         return foyerService.ajouterFoyer(foyer) ;
     }
-
    @DeleteMapping (path = "/foyer")
     public Foyer supprimeFoyer(@RequestBody Foyer foyer) {
        return foyerService.supprimeFoyer(foyer);
-
     }
-
-    @GetMapping(path = "/foyer")
-    public Foyer modifierFoyer(Foyer foyer) {
+    @PutMapping (path = "/foyer")
+    public Foyer modifierFoyer(@RequestBody Foyer foyer) {
 
         return foyerService.modifierFoyer(foyer);
     }
