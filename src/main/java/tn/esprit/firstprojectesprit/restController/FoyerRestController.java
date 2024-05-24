@@ -30,6 +30,11 @@ public class FoyerRestController {
     public Foyer chercherFoyer(@PathVariable("id-foyer") long id) {
         return foyerService.chercherFoyer(id) ;
     }
+@PostMapping(path = "/foyer-bloc/{nom-foyer}")
+    public Foyer affecterFoyerABloc (@PathVariable String nomFoyer , @RequestBody Bloc bloc) {
+        return  foyerService.affecteroyerABloc(nomFoyer,bloc) ;
+
+    }
 
 
 }
