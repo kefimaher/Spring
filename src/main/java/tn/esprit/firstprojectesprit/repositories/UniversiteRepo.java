@@ -9,11 +9,6 @@ import tn.esprit.firstprojectesprit.Entity.Universite;
 import tn.esprit.firstprojectesprit.Entity.User;
 @Repository
 public interface UniversiteRepo extends JpaRepository<Universite,Long> {
-   // Universite numuniversite(String numuniversite);
-    @Query("select universite from Universite universite where universite.numuniversite=:numuniversite")
- //   Universite chercherParnomFoyer(@Param("nom") String nomFoyer) ;
-
-
     Universite findByNumuniversite(String nom) ;
 
 }
