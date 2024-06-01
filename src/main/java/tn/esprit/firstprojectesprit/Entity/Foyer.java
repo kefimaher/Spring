@@ -10,6 +10,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Foyer {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -18,7 +19,6 @@ public class Foyer {
     Long capacitefoyer ;
     @OneToOne
     private Universite universite;
-
 
     @OneToMany (mappedBy = "foyer")
     private Set<Bloc> blocs;

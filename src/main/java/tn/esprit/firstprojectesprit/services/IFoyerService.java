@@ -8,5 +8,6 @@ public interface IFoyerService {
     Foyer supprimeFoyer(Foyer foyer);
     Foyer modifierFoyer(Foyer foyer);
     Foyer chercherFoyer(long id);
-     Foyer affecteroyerABloc (String nomfoyer , Bloc bloc) ;
+    Foyer affecteroyerABloc (String nomfoyer , Bloc bloc) ;
+
   }
