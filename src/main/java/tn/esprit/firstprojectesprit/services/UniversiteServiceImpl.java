@@ -10,13 +10,25 @@ import tn.esprit.firstprojectesprit.repositories.UniversiteRepo;
 @AllArgsConstructor
 @Service
 @Slf4j
-public class UniversiteServiceImpl implements  IUniversite{
-    UniversiteRepo universiteRepo ;
-    FoyerRepo foyerRepo ;
-    public Universite affecterFoyerAuniversite ( long idFoyer , String nomUniversite)
-    {
-        Universite universite = universiteRepo.findByNumuniversite(nomUniversite) ;
-        Foyer foyer =foyerRepo.chercherFoyer(long idFoyer) ;
+public class UniversiteServiceImpl implements  IUniversite {
+    UniversiteRepo universiteRepo;
+    FoyerRepo foyerRepo;
+
+    @Override
+    public Universite affecterFoyerAuniversite(long idFoyer, String nomUniversite) {
+        // Recherche
+        Universite universite = universiteRepo.findByNumuniversite(nomUniversite);
+        Foyer foyer = foyerRepo.findById(idFoyer).orElse(null);
+        // Affectatin
+           if (universite != null && foyer != null) {
+             universite.setFoyer(foyer);
+            universiteRepo.save(universite);
+            return universite;
+        } else {
+            log.error("Foyer or Universite not found");
+        }
+        return universite;
     }
-        
+
+
 }
