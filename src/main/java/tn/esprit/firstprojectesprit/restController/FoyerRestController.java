@@ -35,6 +35,9 @@ public class FoyerRestController {
         return  foyerService.affecteroyerABloc(nomFoyer,bloc) ;
 
     }
+    @PostMapping(path = "/foyer-bloc")
+    public Foyer AjouterFoyeraffecterabloc (@RequestBody Foyer foyer) {
+        return  foyerService.AjouterFoyeraffecterabloc(foyer) ;
 
-
+    }
 }

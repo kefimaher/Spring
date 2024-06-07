@@ -10,4 +10,6 @@ public interface IFoyerService {
     Foyer chercherFoyer(long id);
     Foyer affecteroyerABloc (String nomfoyer , Bloc bloc) ;
 
+    Foyer AjouterFoyeraffecterabloc(Foyer foyer);
+
   }

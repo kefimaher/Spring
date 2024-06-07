@@ -49,5 +49,13 @@ public class FoyerServiceImpl implements  IFoyerService{
         return foyerRepo.findByNomfoyer(nomfoyer);
     }
 
+    @Override
+    public Foyer AjouterFoyeraffecterabloc(Foyer foyer) {
+        for  (Bloc bloc:foyer.getBlocs()){
+            bloc.setFoyer(foyer) ;
+        }
+        return foyerRepo.save(foyer);
+    }
+
 
 }

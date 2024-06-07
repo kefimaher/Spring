@@ -8,4 +8,5 @@ public interface IBlocService {
     Bloc supprimeBloc(Bloc bloc);
     Bloc modifierBloc(Bloc bloc);
     Bloc chercherBloc(long id);
+    Bloc desacffecterBF(long id) ;
 }

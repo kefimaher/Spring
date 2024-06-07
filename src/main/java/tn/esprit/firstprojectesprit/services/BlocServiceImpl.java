@@ -2,6 +2,7 @@ package tn.esprit.firstprojectesprit.services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PutMapping;
 import tn.esprit.firstprojectesprit.Entity.Bloc;
 import tn.esprit.firstprojectesprit.repositories.BlocRepo;
 
@@ -31,4 +32,13 @@ public class BlocServiceImpl implements IBlocService {
     public Bloc chercherBloc(long id) {
         return blocRepo.findById(id).orElse(null);
     }
+
+
+
+    public Bloc desacffecterBF(long idbloc) {
+        Bloc bloc=bloc=blocRepo.findById(idbloc).orElse(null) ;
+        bloc.setFoyer(null);
+      return   blocRepo.save(bloc);
+    }
+
 }
