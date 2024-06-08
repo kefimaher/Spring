@@ -1,8 +1,14 @@
 package tn.esprit.firstprojectesprit.services;
 
 import tn.esprit.firstprojectesprit.Entity.Chambre;
+import tn.esprit.firstprojectesprit.repositories.ChambreRepo;
+
+import java.util.List;
+import java.util.Optional;
 
 public class ChambreServiceImpl implements IChambreService{
+    ChambreRepo chambreRepo ;
+
     @Override
     public Chambre ajouterChambre(Chambre chambre) {
         return null;
@@ -22,4 +28,6 @@ public class ChambreServiceImpl implements IChambreService{
     public Chambre chercherChambre(long chambre) {
         return null;
     }
+
+
 }
