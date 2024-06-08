@@ -2,6 +2,7 @@ package tn.esprit.firstprojectesprit.services;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tn.esprit.firstprojectesprit.Entity.Bloc;
 import tn.esprit.firstprojectesprit.Entity.Foyer;
 import tn.esprit.firstprojectesprit.Entity.Universite;
 import tn.esprit.firstprojectesprit.repositories.FoyerRepo;
@@ -29,6 +30,11 @@ public class UniversiteServiceImpl implements  IUniversite {
             log.error("Foyer or Universite not found");
         }
         return universite;
+    }
+    public Universite desacffecterfoyerauniversite(long iduniversite) {
+        Universite universite=universiteRepo.findById(iduniversite).orElse(null) ;
+       universite.setFoyer(null);
+        return  universiteRepo.save(universite);
     }
 
 

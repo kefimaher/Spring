@@ -1,6 +1,7 @@
 package tn.esprit.firstprojectesprit.restController;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.firstprojectesprit.Entity.Bloc;
 import tn.esprit.firstprojectesprit.Entity.Universite;
 import tn.esprit.firstprojectesprit.services.IUniversite;
 
@@ -16,5 +17,10 @@ public class UniversiteRestController {
         {
             return universiteService.affecterFoyerAuniversite(idFoyer, nomUniversite);
         }
+    }
+    @PutMapping("/universite-deaffecter-foyer/{id-universite}")
+    Universite desacffecterfoyerauniversite(@PathVariable("id-universite") long universite){
+        return universiteService.desacffecterfoyerauniversite(universite) ;
+
     }
 }
